@@ -1,0 +1,17 @@
+.navbar-list li {
+  display: flex;
+  align-items: center;
+  /* justify-content: flex-start; */
+  position: relative;
+}
+
+.navbar-list li div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ionicon {
+  width: 22px;
+  height: 22px;
+}

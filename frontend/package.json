@@ -1,0 +1,46 @@
+{
+  "name": "angular-ecommerce",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --o --ssl=true --ssl-key=./ssl-localhost/localhost.key --ssl-cert=./ssl-localhost/localhost.crt",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^14.1.0",
+    "@angular/common": "^14.1.0",
+    "@angular/compiler": "^14.1.0",
+    "@angular/core": "^14.1.0",
+    "@angular/forms": "^14.1.0",
+    "@angular/platform-browser": "^14.1.0",
+    "@angular/platform-browser-dynamic": "^14.1.0",
+    "@angular/router": "^14.1.0",
+    "@fortawesome/fontawesome-free": "^6.1.1",
+    "@ng-bootstrap/ng-bootstrap": "^13.0.0",
+    "@okta/okta-angular": "^3.2.2",
+    "@okta/okta-auth-js": "^5.9.1",
+    "@okta/okta-signin-widget": "^6.3.2",
+    "bootstrap": "^5.2.0",
+    "rxjs": "~7.5.0",
+    "stripe": "^10.2.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^14.1.0",
+    "@angular/cli": "~14.1.0",
+    "@angular/compiler-cli": "^14.1.0",
+    "@angular/localize": "^14.1.0",
+    "@types/jasmine": "~4.0.0",
+    "jasmine-core": "~4.2.0",
+    "karma": "~6.4.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "typescript": "~4.7.2"
+  }
+}
