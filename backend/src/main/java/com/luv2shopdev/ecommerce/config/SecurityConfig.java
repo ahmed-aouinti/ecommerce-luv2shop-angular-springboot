@@ -1,4 +1,4 @@
-package com.luv2shopdev.ecommerce;
+package com.luv2shopdev.ecommerce.config;
 
 import com.okta.spring.boot.oauth.Okta;
 import org.springframework.context.annotation.Bean;
