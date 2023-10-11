@@ -30,7 +30,9 @@
 
   width: 450px;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
 }
 
 /*

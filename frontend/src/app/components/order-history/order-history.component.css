@@ -1,0 +1,27 @@
+.skeleton-table {
+  width: 100%;
+}
+
+.skeleton-line {
+  height: 20px; /* Adjust the height as needed */
+  background-color: #e0e0e0;
+  opacity: 0.6;
+  height: 36px;
+  margin-top: 4px;
+}
+
+/* Add animation to the skeleton lines */
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton-line {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.7s infinite;
+}

@@ -1,4 +1,4 @@
-<div class="cart-area d-n">
+<!-- <div class="cart-area d-n">
   <a routerLink="/cart-details">
     <div class="total-price">
       <div class="total">
@@ -6,6 +6,17 @@
         <span> {{ totalQuantity }}</span>
       </div>
       <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+    </div>
+  </a>
+</div> -->
+<div class="cart-area d-n">
+  <a routerLink="/cart-details">
+    <div class="icon-container ms-5">
+      <i class="fa fa-shopping-cart custom-icon" aria-hidden="true"></i>
+      <div class="total">
+        {{ totalPrice | currency : "USD" }}
+        <span> {{ totalQuantity }}</span>
+      </div>
     </div>
   </a>
 </div>

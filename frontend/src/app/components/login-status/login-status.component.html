@@ -2,24 +2,28 @@
   <div *ngIf="isAuthenticated && userFullName" class="login-status-user-info">
     Welcome back {{ userFullName }}!
   </div>
-  <button *ngIf="!isAuthenticated" routerLink="/login" class="security-btn">
-    Login
-  </button>
-  <button *ngIf="isAuthenticated" (click)="logout()" class="security-btn">
-    Logout
-  </button>
-  <button
-    *ngIf="isAuthenticated"
-    routerLink="/members"
-    class="security-btn ml-1"
-  >
-    Member
-  </button>
-  <button
-    *ngIf="isAuthenticated"
-    routerLink="/order-history"
-    class="security-btn"
-  >
-    Orders
-  </button>
+  <a href="#" *ngIf="!isAuthenticated" routerLink="/login">
+    <div class="icon-container">
+      <i class="fa-solid fa-right-to-bracket custom-icon"></i>
+      Login
+    </div>
+  </a>
+  <a href="#" *ngIf="isAuthenticated" (click)="logout()">
+    <div class="icon-container">
+      <i class="fa-solid fa-arrow-right-from-bracket custom-icon"></i>
+      Logout
+    </div>
+  </a>
+  <a href="#" *ngIf="isAuthenticated" routerLink="/members">
+    <div class="icon-container">
+      <i class="fa-solid fa-user-check custom-icon"></i>
+      Member
+    </div>
+  </a>
+  <a href="#" *ngIf="isAuthenticated" routerLink="/order-history">
+    <div class="icon-container">
+      <i class="fa-solid fa-truck-fast custom-icon"></i>
+      Orders
+    </div>
+  </a>
 </div>

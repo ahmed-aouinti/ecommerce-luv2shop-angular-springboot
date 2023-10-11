@@ -146,6 +146,33 @@ aside.menu-sidebar.d-none.d-lg-block.clr {
   box-shadow: -2px 0 4px #0000003b;
 }
 
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #05143f;
+}
+
+.icon-container:hover {
+  color: #0da8e4;
+  margin-top: 8px;
+}
+
+.icon-container:hover .total {
+  background-color: #0da8e4;
+  outline: 1px solid #0da8e4;
+}
+
+.icon-container:hover .total span {
+  color: #05143f;
+}
+
+.custom-icon {
+  width: 22px;
+  height: 22px;
+}
+
 /*
 * ----------------------------
 * Header Desktop Section
@@ -190,10 +217,16 @@ aside.menu-sidebar.d-none.d-lg-block.clr {
   -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
+  -webkit-justify-content: justify;
   -moz-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.right-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-button {
@@ -257,36 +290,30 @@ input.au-input.au-input-xl {
 }
 
 .cart-area.d-n {
-  display: block;
-}
-
-.cart-area i {
-  font-size: 22px;
-  /* float: left; */
-  /* margin-top: 16px; */
-  color: #205b8d;
-  /* margin-left: 15px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .total {
-  background: #205b8d;
-  line-height: 43px;
+  background: #05143f;
+  /* line-height: 43px; */
   color: #fff;
   border-radius: 30px;
-  outline: 1px solid #205b8d;
+  outline: 1px solid #05143f;
   /* float: left; */
   /* margin-top: 7px; */
-  padding-left: 17px;
+  padding-left: 12px;
 }
 
 .total span {
   display: inline-block;
   background: #fff;
-  padding: 0 13px;
-  color: #000;
+  padding: 0 12px;
+  color: #333;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  margin-left: 11px;
+  /* margin-left: 11px; */
 }
 
 .form-header {
@@ -831,23 +858,28 @@ select {
 .table {
   margin: 0;
 }
+
 table.table.table-bordered {
   border: 1px solid #ccc;
   background: #fff;
 }
+
 .table-bordered td,
 .table-bordered th {
   border: 1px solid #dee2e6;
 }
+
 table.table.table-bordered th {
   background: #0da8e4;
   color: #fff;
   font-size: 14px;
   padding: 7px;
 }
+
 .table-responsive {
   padding-right: 1px;
 }
+
 .items select {
   width: 100px;
   height: 40px;
@@ -856,6 +888,34 @@ table.table.table-bordered th {
   margin-bottom: 10px;
   outline: 0;
   margin-left: 5px;
+}
+
+.skeleton-table {
+  width: 100%;
+}
+
+.skeleton-line {
+  height: 20px; /* Adjust the height as needed */
+  background-color: #e0e0e0;
+  opacity: 0.6;
+  height: 36px;
+  margin-top: 4px;
+}
+
+/* Add animation to the skeleton lines */
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton-line {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.7s infinite;
 }
 
 /*

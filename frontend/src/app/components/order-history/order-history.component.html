@@ -1,4 +1,4 @@
-<div class="main-content">
+<!-- <div class="main-content">
   <div class="section-content section-content-p30">
     <div class="container-fluid">
       <h3>Your Orders:</h3>
@@ -34,7 +34,7 @@
         </table>
       </div>
 
-      <!-- if order history is empty => display a message -->
+
       <div
         *ngIf="orderHistoryList.length == 0"
         class="alert alert-warning col-md-12"
@@ -42,6 +42,65 @@
       >
         No order found.
       </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <h3>Your Orders</h3>
+
+      <div *ngIf="orderHistoryList.length === 0; else orderList">
+        <table class="skeleton-table">
+          <tbody>
+            <tr>
+              <th width="20%"><div class="skeleton-line"></div></th>
+              <th width="10%"><div class="skeleton-line"></div></th>
+              <th width="10%"><div class="skeleton-line"></div></th>
+              <th width="10%"><div class="skeleton-line"></div></th>
+            </tr>
+
+            <tr *ngFor="let tempOrderHistory of [1, 2, 3, 4, 5, 6, 7, 8]">
+              <td><div class="skeleton-line"></div></td>
+              <td><div class="skeleton-line"></div></td>
+              <td><div class="skeleton-line"></div></td>
+              <td><div class="skeleton-line"></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ng-template #orderList>
+        <!-- Your actual order list content goes here -->
+        <div *ngIf="orderHistoryList.length > 0">
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <th width="20%">Order Tracking Number</th>
+                <th width="10%">Total Price</th>
+                <th width="10%">Total Quantity</th>
+                <th width="10%">Date</th>
+              </tr>
+
+              <tr *ngFor="let tempOrderHistory of orderHistoryList">
+                <td>{{ tempOrderHistory.orderTrackingNumber }}</td>
+                <td>{{ tempOrderHistory.totalPrice | currency : "USD" }}</td>
+                <td>{{ tempOrderHistory.totalQuantity }}</td>
+                <td>{{ tempOrderHistory.dateCreated | date : "medium" }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div
+          *ngIf="orderHistoryList.length == 0"
+          class="alert alert-warning col-md-12"
+          role="alert"
+        >
+          No order found.
+        </div>
+      </ng-template>
     </div>
   </div>
 </div>
