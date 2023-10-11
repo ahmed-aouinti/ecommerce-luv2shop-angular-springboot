@@ -51,7 +51,9 @@
     <div class="container-fluid">
       <h3>Your Orders</h3>
 
-      <div *ngIf="orderHistoryList.length === 0; else orderList">
+      <ng-container
+        *ngIf="skeletonOrderHistoryList.length !== 0; else orderList"
+      >
         <table class="skeleton-table">
           <tbody>
             <tr>
@@ -61,7 +63,7 @@
               <th width="10%"><div class="skeleton-line"></div></th>
             </tr>
 
-            <tr *ngFor="let tempOrderHistory of [1, 2, 3, 4, 5, 6, 7, 8]">
+            <tr *ngFor="let tempOrderHistory of skeletonOrderHistoryList">
               <td><div class="skeleton-line"></div></td>
               <td><div class="skeleton-line"></div></td>
               <td><div class="skeleton-line"></div></td>
@@ -69,7 +71,7 @@
             </tr>
           </tbody>
         </table>
-      </div>
+      </ng-container>
 
       <ng-template #orderList>
         <!-- Your actual order list content goes here -->

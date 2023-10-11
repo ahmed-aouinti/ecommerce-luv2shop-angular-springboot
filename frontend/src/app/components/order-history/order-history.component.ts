@@ -9,6 +9,7 @@ import { OrderHistoryService } from 'src/app/services/order-history.service';
 })
 export class OrderHistoryComponent implements OnInit {
   orderHistoryList: OrderHistory[] = [];
+  skeletonOrderHistoryList: OrderHistory[] = Array(8).fill({}); // Create skeleton cards
   storage: Storage = sessionStorage;
 
   constructor(private orderHistoryService: OrderHistoryService) {}
@@ -24,6 +25,7 @@ export class OrderHistoryComponent implements OnInit {
     // retrieve data from REST API using OrderHistoryService
     this.orderHistoryService.getOrderHistory(email).subscribe((data) => {
       this.orderHistoryList = data._embedded.orders;
+      this.skeletonOrderHistoryList = [];
     });
   }
 }
