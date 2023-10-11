@@ -71,6 +71,15 @@ export class CartService {
     this.storage.setItem('cartItems', JSON.stringify(this.cartItems));
   }
 
+  resetCartItems() {
+    // reset cart data
+    this.cartItems = [];
+    this.totalPrice.next(0);
+    this.totalQuantity.next(0);
+    // updates storage with latest state of the cart.
+    this.persistCartItems();
+  }
+
   decrementQuantity(theCartItem: CartItem) {
     theCartItem.quantity--;
     if (theCartItem.quantity == 0) {
