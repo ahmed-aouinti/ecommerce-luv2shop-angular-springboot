@@ -621,6 +621,11 @@ input.au-input.au-input-xl {
   padding: 12px;
   height: 300px;
   transition: transform 0.5s ease; /* Define the transition property */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-box:hover {
