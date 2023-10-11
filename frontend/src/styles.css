@@ -646,6 +646,62 @@ input.au-input.au-input-xl {
   color: #585858;
 }
 
+/* Skeleton loader for product box */
+
+.product-box.skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #f0f0f0;
+  box-shadow: none;
+}
+
+.product-box.skeleton::before {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 120px;
+  background-color: #e0e0e0;
+  margin: 5px auto 22px;
+  border-radius: 8px;
+}
+
+.product-box.skeleton .skeleton-title {
+  height: 42px;
+  width: 60%;
+}
+
+.product-box.skeleton .skeleton-price {
+  height: 36px;
+  width: 30%;
+}
+
+.product-box.skeleton .skeleton-button {
+  height: 36px;
+  width: 35%;
+  border-radius: 4px;
+}
+
+.skeleton-bg-color {
+  background-color: #e0e0e0;
+}
+
+/* Skeleton loader animation */
+@keyframes skeleton-loading {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.product-box.skeleton {
+  animation: skeleton-loading 1.5s infinite; /* Apply the loading animation */
+}
+
 /*
 * ----------------------------
 * Shopping Cart Checkout

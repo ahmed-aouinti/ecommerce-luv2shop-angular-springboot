@@ -2,6 +2,18 @@
   <div class="section-content section-content-p30">
     <div class="container-fluid">
       <div class="row">
+        <!-- Skeleton loader for product cards -->
+        <ng-container *ngFor="let skeletonProduct of skeletonProducts">
+          <div class="col-md-3">
+            <div class="product-box skeleton">
+              <div class="skeleton-title skeleton-bg-color"></div>
+              <div class="skeleton-price skeleton-bg-color"></div>
+              <div class="skeleton-button skeleton-bg-color"></div>
+            </div>
+          </div>
+        </ng-container>
+
+        <!-- Actual product cards -->
         <div *ngFor="let tempProduct of products" class="col-md-3">
           <div class="product-box">
             <a routerLink="/products/{{ tempProduct.id }}">
@@ -24,15 +36,8 @@
             </button>
           </div>
         </div>
-        <div
-          *ngIf="products?.length === 0"
-          class="alert alert-warning col-md-12"
-          role="alert"
-        >
-          No Products Found.
-        </div>
       </div>
-      <div class="footer-pagination">
+      <div *ngIf="products?.length !== 0" class="footer-pagination">
         <div
           class="row d-flex pt-2 pb-2 rounded-2"
           style="background-color: #fafafa"

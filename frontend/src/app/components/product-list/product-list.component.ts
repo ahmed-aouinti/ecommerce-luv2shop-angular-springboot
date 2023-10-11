@@ -12,6 +12,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductListComponent implements OnInit {
   products: Product[] = [];
+  skeletonProducts: Product[] = Array(8).fill({}); // Create skeleton cards
   currentCategoryId: number = 1;
   previousCategoryId: number = 1;
   currentCategoryName: string = '';
@@ -50,7 +51,7 @@ export class ProductListComponent implements OnInit {
 
     // if we have a different searchInput than previous
     // then set pageNumber to 1
-    if (this.previousSearchInput != searchInput) {
+    if (this.previousSearchInput !== searchInput) {
       this.pageNumber = 1;
     }
 
@@ -100,6 +101,9 @@ export class ProductListComponent implements OnInit {
 
   processResult() {
     return (data: any) => {
+      // Reset the skeleton loader by setting skeletonProducts to an empty array
+      this.skeletonProducts = [];
+
       this.products = data._embedded.products;
       // + 1 because pagination component:pages are 1 based however in spring data REST: pages are 0 based
       this.pageNumber = data.page.number + 1;
