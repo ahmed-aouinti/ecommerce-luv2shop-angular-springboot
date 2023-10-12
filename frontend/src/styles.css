@@ -740,47 +740,61 @@ input.au-input.au-input-xl {
 * ----------------------------
 */
 
-.form-area {
-  background: #e5e5e5;
-  position: relative;
-  margin-bottom: 45px;
-  padding: 50px 20px;
-  border: 3px solid #ccc;
+.checkout-container {
+  width: 60% !important;
+  padding-top: 5% !important;
+  margin: 0 auto !important;
 }
+
+.form-area {
+  background-color: #05143f;
+  color: #cdd0d9;
+  position: relative;
+  margin-bottom: 82px;
+  padding: 50px 20px;
+  border: 2px solid #05143f;
+  border-radius: 8px;
+}
+
+.shippingAddress-form {
+  margin-bottom: 56px;
+}
+
 .form-area h3 {
   position: absolute;
   top: -26px;
   left: 13px;
-  background: #e5e5e5;
+  background-color: #05143f;
+  color: #0da8e4;
+  border-radius: 8px;
   padding: 10px 20px;
   font-weight: 500;
-  z-index: 23;
+  z-index: 99;
   display: inline-block;
 }
+
 .input-space {
   margin-bottom: 20px;
 }
+
 .input-space label {
   padding-left: 31px;
-  font-size: 14px;
-  margin-bottom: 50px;
+  font-size: 16px;
+  color: #05143f;
+  margin-bottom: 68px;
 }
-.input-space input[type="text"] {
-  width: 100%;
-  height: 40px;
-  border-radius: 30px;
-  outline: 0;
-  padding: 10px;
-  border: 1px solid #ccc;
-}
+
+.input-space input[type="text"],
 .input-space select {
   width: 100%;
   height: 40px;
-  border-radius: 30px;
   outline: 0;
-  padding: 0 10px;
-  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #fff;
+  border: 2px solid #0da8e4;
+  border-radius: 12px;
 }
+
 .au-checkbox {
   display: block;
   position: relative;
@@ -791,11 +805,13 @@ input.au-input.au-input-xl {
   -ms-user-select: none;
   user-select: none;
 }
+
 .au-checkbox input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
 }
+
 .au-checkmark {
   position: absolute;
   top: 0;
@@ -803,18 +819,21 @@ input.au-input.au-input-xl {
   height: 22px;
   width: 22px;
   background-color: #fff !important;
-  border: 2px solid #e5e5e5;
+  border: 2px solid #05143f;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
 }
+
 .au-checkbox:hover input ~ .au-checkmark {
   background-color: transparent;
   transition: all 0.3s;
 }
+
 .au-checkbox input:checked ~ .au-checkmark {
   background-color: #fff;
 }
+
 .au-checkmark:after {
   content: "";
   position: absolute;
@@ -947,7 +966,12 @@ table.table.table-bordered th {
 .btn-info {
   color: #fff;
   background-color: #0da8e4 !important;
-  border-color: #0da8e4 !important;
+  box-shadow: 2px 6px 6px #05435b;
+  border: none !important;
+}
+.btn-info:hover {
+  background-color: #f88c21 !important;
+  color: #fef4e9 !important;
 }
 a.primary-btn {
   background: #05143f;

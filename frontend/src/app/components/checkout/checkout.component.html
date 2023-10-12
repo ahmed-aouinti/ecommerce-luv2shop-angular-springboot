@@ -1,13 +1,13 @@
-<div class="main-content page-m">
+<div class="main-content">
   <div class="section-content section-content-p30">
-    <div class="container-fluid">
+    <div class="container-fluid checkout-container">
       <form [formGroup]="checkoutFormGroup" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <!-- customer form group -->
           <div formGroupName="customer" class="form-area">
             <h3>Customer</h3>
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <label for="firstName"> First Name</label>
               </div>
               <div class="col-md-9">
@@ -37,7 +37,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <label for="lastName"> Last Name</label>
               </div>
               <div class="col-md-9">
@@ -63,7 +63,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <label for="email"> Email</label>
               </div>
               <div class="col-md-9">
@@ -86,10 +86,13 @@
           </div>
 
           <!-- shipping address form group -->
-          <div formGroupName="shippingAddress" class="form-area">
+          <div
+            formGroupName="shippingAddress"
+            class="form-area shippingAddress-form"
+          >
             <h3>Shipping Address</h3>
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <label for="country"> Country </label>
               </div>
               <div class="col-md-9">
@@ -121,7 +124,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <label for="street"> Street</label>
               </div>
               <div class="col-md-9">
@@ -148,7 +151,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <label for="city"> City</label>
               </div>
               <div class="col-md-9">
@@ -175,7 +178,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <label for="state"> State</label>
               </div>
               <div class="col-md-9">
@@ -204,7 +207,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <label for="zipCode"> Zip Code</label>
               </div>
               <div class="col-md-9">
@@ -248,7 +251,7 @@
           <div formGroupName="billingAddress" class="form-area">
             <h3>Billing Address</h3>
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <label for="country"> Country </label>
               </div>
               <div class="col-md-9">
@@ -280,7 +283,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <label for="street"> Street</label>
               </div>
               <div class="col-md-9">
@@ -307,7 +310,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <label for="city"> City</label>
               </div>
               <div class="col-md-9">
@@ -333,7 +336,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <label for="state"> State</label>
               </div>
               <div class="col-md-9">
@@ -362,7 +365,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-md-2">
+              <div class="col-md-3">
                 <label for="zipCode"> Zip Code</label>
               </div>
               <div class="col-md-9">
@@ -393,7 +396,15 @@
           <!-- Stripe Elements Credit Card Section -->
           <div formGroupName="creditCard" class="form-area">
             <h3>Credit or Debit Card</h3>
-            <div id="card-element">
+            <div
+              id="card-element"
+              style="
+                border: 3px solid #0da8e4;
+                padding: 10px;
+                border-radius: 6px;
+                background-color: #fff;
+              "
+            >
               <!-- a Stripe Element will be inserted here. -->
             </div>
 
