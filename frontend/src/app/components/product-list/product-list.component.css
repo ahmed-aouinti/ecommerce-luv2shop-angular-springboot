@@ -1,3 +1,36 @@
-::ng-deep .pagination-wrapper .pagination {
-  margin-bottom: 0px;
+.footer-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ngb-pagination ::ng-deep a {
+  color: #585858 !important;
+  font-size: 1.6rem;
+}
+
+ngb-pagination ::ng-deep .page-item.active .page-link {
+  background-color: #0d6efd;
+  color: #fff !important;
+}
+
+ngb-pagination ::ng-deep .page-item.active .page-link:focus,
+.page-link:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0.1rem dimgrey;
+}
+
+ngb-pagination ::ng-deep .page-link:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0.1rem dimgrey;
+}
+
+.right-pagination span {
+  margin-right: 1.2rem;
+  color: #585858;
+  font-size: 1.6rem;
+}
+
+.right-pagination select {
+  background-color: #fff;
+  color: #0d6efd;
+  border: 1px solid #bfbfbf;
 }

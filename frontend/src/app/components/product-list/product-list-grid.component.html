@@ -1,10 +1,10 @@
 <div class="main-content">
   <div class="section-content section-content-p30">
-    <div class="container-fluid">
+    <div class="container-fluid product-list-container">
       <div class="row">
         <!-- Skeleton loader for product cards -->
         <ng-container *ngFor="let skeletonProduct of skeletonProducts">
-          <div class="col-md-3">
+          <div class="col-12 col-sm-6 col-md-4 col-xl-3">
             <div class="product-box skeleton">
               <div class="skeleton-title skeleton-bg-color"></div>
               <div class="skeleton-price skeleton-bg-color"></div>
@@ -14,7 +14,10 @@
         </ng-container>
 
         <!-- Actual product cards -->
-        <div *ngFor="let tempProduct of products" class="col-md-3">
+        <div
+          *ngFor="let tempProduct of products"
+          class="col-12 col-sm-6 col-md-4 col-xl-3"
+        >
           <div class="product-box">
             <a routerLink="/products/{{ tempProduct.id }}">
               <img
@@ -30,7 +33,7 @@
             </div>
             <button
               (click)="addToCart(tempProduct)"
-              class="btn btn-primary btn-sm"
+              class="btn btn-primary btn-style"
             >
               Add to cart
             </button>
@@ -38,37 +41,24 @@
         </div>
       </div>
       <div *ngIf="products?.length !== 0" class="footer-pagination">
-        <div
-          class="row d-flex pt-2 pb-2 rounded-2"
-          style="background-color: #fafafa"
-        >
-          <div class="col-md-6">
-            <ngb-pagination
-              [(page)]="pageNumber"
-              [pageSize]="pageSize"
-              [collectionSize]="totalElements"
-              [maxSize]="5"
-              [boundaryLinks]="true"
-              (pageChange)="listProducts()"
-              class="pagination-wrapper"
-            ></ngb-pagination>
-          </div>
-          <div
-            class="col-md-6 text-end d-flex align-items-center justify-content-end"
-          >
-            <span class="mx-3" style="color: #0d6efd">Page Size</span>
-            <select
-              class="border-0 pt-1 pb-1 text-center rounded-1"
-              style="color: #0d6efd; background-color: #fff"
-              #myPageSelect
-              (change)="updatePageSize($event)"
-            >
-              <option selected="true">5</option>
-              <option>10</option>
-              <option>20</option>
-              <option>50</option>
-            </select>
-          </div>
+        <div class="left-pagination">
+          <ngb-pagination
+            [(page)]="pageNumber"
+            [pageSize]="pageSize"
+            [collectionSize]="totalElements"
+            [maxSize]="5"
+            [boundaryLinks]="true"
+            (pageChange)="listProducts()"
+          ></ngb-pagination>
+        </div>
+        <div class="right-pagination">
+          <span>Page Size</span>
+          <select #myPageSelect (change)="updatePageSize($event)">
+            <option selected="true">8</option>
+            <option>16</option>
+            <option>32</option>
+            <option>50</option>
+          </select>
         </div>
       </div>
     </div>

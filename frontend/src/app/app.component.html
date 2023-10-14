@@ -1,7 +1,7 @@
 <div class="page-wrapper">
   <!-- MENU SIDEBAR-->
-  <aside class="menu-sidebar d-none d-lg-block">
-    <div class="logo">
+  <aside class="menu-sidebar d-block">
+    <div class="logo d-none d-md-block">
       <a routerLink="/products" style="cursor: pointer">
         <img
           src="assets/images/logo.png"
@@ -26,11 +26,19 @@
               <app-search></app-search>
             </div>
             <div class="right-header">
+              <div class="logo d-md-none">
+                <a routerLink="/products" style="cursor: pointer">
+                  <img
+                    src="assets/images/logo.png"
+                    alt="luv2shop"
+                    class="img-responsive"
+                  />
+                </a>
+              </div>
               <app-login-status></app-login-status>
               <app-cart-status></app-cart-status>
             </div>
           </div>
-          <div class="account-wrap"></div>
         </div>
       </div>
     </header>
@@ -39,14 +47,14 @@
     <!-- MAIN CONTENT-->
     <router-outlet></router-outlet>
   </div>
+
+  <!-- END PAGE CONTAINER-->
+
+  <footer>
+    <ul>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="#">Help</a></li>
+    </ul>
+  </footer>
 </div>
-
-<!-- END PAGE CONTAINER-->
-
-<footer>
-  <ul>
-    <li><a href="#">About Us</a></li>
-    <li><a href="#">Contact Us</a></li>
-    <li><a href="#">Help</a></li>
-  </ul>
-</footer>

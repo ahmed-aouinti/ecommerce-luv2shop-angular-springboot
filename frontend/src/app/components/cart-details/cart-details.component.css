@@ -1,4 +1,4 @@
 .cart-item:nth-child(odd) td,
 .cart-item:nth-child(odd) td div {
-  background-color: #e5e5e5;
+  background-color: #f5f5f5;
 }

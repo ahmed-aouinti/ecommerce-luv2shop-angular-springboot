@@ -31,7 +31,7 @@
                   class="d-flex align-items-center justify-content-center gap-5"
                 >
                   <button
-                    class="btn btn-primary btn-sm"
+                    class="btn btn-primary btn-style"
                     (click)="incrementQuantity(tempCartItem)"
                   >
                     <i class="fas fa-plus"></i>
@@ -42,7 +42,7 @@
                   </div>
 
                   <button
-                    class="btn btn-primary btn-sm"
+                    class="btn btn-primary btn-style"
                     (click)="decrementQuantity(tempCartItem)"
                   >
                     <i class="fas fa-minus"></i>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="mt-3">
                   <button
-                    class="btn btn-danger"
+                    class="btn btn-danger btn-style"
                     (click)="removeItem(tempCartItem)"
                   >
                     Remove
@@ -73,7 +73,9 @@
               <p>Shipping: FREE</p>
               <p>Total Price: {{ totalPrice | currency : "USD" }}</p>
               <div>
-                <a routerLink="/checkout" class="btn btn-success">Checkout</a>
+                <a routerLink="/checkout" class="btn btn-success btn-style"
+                  >Checkout</a
+                >
               </div>
             </td>
           </tr>

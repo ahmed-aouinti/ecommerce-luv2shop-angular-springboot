@@ -5,6 +5,8 @@
         *ngFor="let tempProductCategory of productCategories"
         [ngClass]="{ selected: tempProductCategory === selectedCategory }"
         (click)="setSelectedCategory(tempProductCategory)"
+        routerLink="/category/{{ tempProductCategory.id }}"
+        routerLinkActive="active-link"
       >
         <div *ngIf="tempProductCategory.categoryName == 'Books'">
           <svg
@@ -80,11 +82,7 @@
           </svg>
         </div>
 
-        <a
-          routerLink="/category/{{ tempProductCategory.id }}"
-          routerLinkActive="active-link"
-          >{{ tempProductCategory.categoryName | uppercase }}</a
-        >
+        <a>{{ tempProductCategory.categoryName | uppercase }}</a>
       </li>
     </ul>
   </nav>
