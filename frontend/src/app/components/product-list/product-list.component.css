@@ -33,4 +33,5 @@ ngb-pagination ::ng-deep .page-link:not(:disabled):not(.disabled):active:focus {
   background-color: #fff;
   color: #0d6efd;
   border: 1px solid #bfbfbf;
+  padding: 0.6rem 0;
 }
