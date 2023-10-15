@@ -365,7 +365,6 @@ input.au-input.au-input-xl {
   top: 0;
   bottom: 0;
   background: linear-gradient(#05143f, #205b8d, #03a9f4, #e5e5e5);
-  overflow-y: auto;
 }
 
 .menu-sidebar .logo {
@@ -414,6 +413,7 @@ input.au-input.au-input-xl {
   color: #fff;
   margin-bottom: 3.2rem;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .navbar-sidebar .navbar-list li a {
@@ -1021,12 +1021,12 @@ footer ul li {
   .menu-sidebar {
     width: 6rem;
     margin-top: 8rem;
-    overflow: hidden;
     z-index: 999;
   }
   .navbar-sidebar .navbar-list li a {
-    display: none;
+    color: transparent;
   }
+
   .navbar-list li div {
     margin: 1.8rem 0;
   }
