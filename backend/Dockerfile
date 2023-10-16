@@ -15,4 +15,4 @@ COPY --from=builder /app/target/spring-boot-ecommerce-0.0.1-SNAPSHOT.jar /app.ja
 EXPOSE 8443
 WORKDIR /app
 LABEL name="spring-boot-ecommerce" version="0.0.1-SNAPSHOT"
-ENTRYPOINT ["java", "-Dserver.ssl.key-store-password=secret", "-jar", "/app.jar"]
+ENTRYPOINT ["java", "server.ssl.key-store-password=secret", "-jar", "/app.jar"]
