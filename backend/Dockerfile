@@ -13,4 +13,4 @@ RUN mvn -f /home/app/pom.xml clean package
 FROM openjdk:11-jre-slim
 COPY --from=build /home/app/target/spring-boot-ecommerce-0.0.1-SNAPSHOT.jar /usr/local/lib/spring-boot-ecommerce.jar
 EXPOSE 8443
-ENTRYPOINT ["java", "server.ssl.key-store-password=secret", "-jar", "/app.jar"]
+ENTRYPOINT ["java","-jar","/usr/local/lib/spring-boot-ecommerce.jar"]
