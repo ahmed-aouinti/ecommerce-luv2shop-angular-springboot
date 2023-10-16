@@ -11,6 +11,8 @@ RUN mvn -f /home/app/pom.xml clean package
 # Package stage
 #
 FROM openjdk:11-jre-slim
-COPY --from=build /home/app/target/spring-boot-ecommerce-0.0.1-SNAPSHOT.jar /usr/local/lib/spring-boot-ecommerce.jar
+COPY --from=builder /app/target/spring-boot-ecommerce-0.0.1-SNAPSHOT.jar /app.jar
 EXPOSE 8443
-ENTRYPOINT ["java","-jar","/usr/local/lib/spring-boot-ecommerce.jar"]
+WORKDIR /app
+LABEL name="spring-boot-ecommerce" version="0.0.1-SNAPSHOT"
+ENTRYPOINT ["java", "-Dserver.ssl.key-store-password=secret", "-jar", "/app.jar"]
