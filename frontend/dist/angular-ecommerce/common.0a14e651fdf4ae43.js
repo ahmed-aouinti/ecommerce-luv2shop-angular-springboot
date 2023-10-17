@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkangular_ecommerce=self.webpackChunkangular_ecommerce||[]).push([[592],{53162:(t,i,a)=>{a.d(i,{b:()=>s});class s{constructor(e){this.id=e.id,this.name=e.name,this.imageUrl=e.imageUrl,this.unitPrice=e.unitPrice,this.quantity=1}}}}]);

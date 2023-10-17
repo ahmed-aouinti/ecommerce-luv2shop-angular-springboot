@@ -28,7 +28,8 @@
             "allowedCommonJsDependencies": [
               "@okta/okta-auth-js",
               "@okta/okta-signin-widget"
-            ]
+            ],
+            "optimization": true
           },
           "configurations": {
             "production": {
