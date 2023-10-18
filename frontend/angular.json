@@ -27,7 +27,15 @@
             ],
             "allowedCommonJsDependencies": [
               "@okta/okta-auth-js",
-              "@okta/okta-signin-widget"
+              "@okta/okta-signin-widget",
+              "cross-fetch",
+              "@sindresorhus/to-milliseconds",
+              "parse-ms",
+              "q",
+              "p-cancelable",
+              "tiny-emitter",
+              "detect-node",
+              "clipboard"
             ],
             "optimization": true
           },
@@ -36,8 +44,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2.4mb",
+                  "maximumError": "2.5mb"
                 },
                 {
                   "type": "anyComponentStyle",
