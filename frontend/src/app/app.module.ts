@@ -40,108 +40,28 @@ const oktaConfig = Object.assign(
   appConfig.oidc
 );
 
-// create routes
 const routes: Routes = [
   {
     path: 'members',
-    loadChildren: () =>
-      import('./components/members-page/members-page.component').then(
-        (m) => m.MembersPageComponent
-      ),
+    component: MembersPageComponent,
     canActivate: [OktaAuthGuard],
   },
   {
     path: 'order-history',
-    loadChildren: () =>
-      import('./components/order-history/order-history.component').then(
-        (m) => m.OrderHistoryComponent
-      ),
+    component: OrderHistoryComponent,
     canActivate: [OktaAuthGuard],
   },
   { path: 'login/callback', component: OktaCallbackComponent },
-  {
-    path: 'login',
-    loadChildren: () =>
-      import('./components/login/login.component').then(
-        (m) => m.LoginComponent
-      ),
-  },
-  {
-    path: 'checkout',
-    loadChildren: () =>
-      import('./components/checkout/checkout.component').then(
-        (m) => m.CheckoutComponent
-      ),
-  },
-  {
-    path: 'cart-details',
-    loadChildren: () =>
-      import('./components/cart-details/cart-details.component').then(
-        (m) => m.CartDetailsComponent
-      ),
-  },
-  {
-    path: 'products/:id',
-    loadChildren: () =>
-      import('./components/product-details/product-details.component').then(
-        (m) => m.ProductDetailsComponent
-      ),
-  },
-  {
-    path: 'search/:keyword',
-    loadChildren: () =>
-      import('./components/product-list/product-list.component').then(
-        (m) => m.ProductListComponent
-      ),
-  },
-  {
-    path: 'category/:id',
-    loadChildren: () =>
-      import('./components/product-list/product-list.component').then(
-        (m) => m.ProductListComponent
-      ),
-  },
-  {
-    path: 'category',
-    loadChildren: () =>
-      import('./components/product-list/product-list.component').then(
-        (m) => m.ProductListComponent
-      ),
-  },
-  {
-    path: 'products',
-    loadChildren: () =>
-      import('./components/product-list/product-list.component').then(
-        (m) => m.ProductListComponent
-      ),
-  },
+  { path: 'login', component: LoginComponent },
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'cart-details', component: CartDetailsComponent },
+  { path: 'products/:id', component: ProductDetailsComponent },
+  { path: 'search/:keyword', component: ProductListComponent },
+  { path: 'category/:id', component: ProductListComponent },
+  { path: 'category', component: ProductListComponent },
+  { path: 'products', component: ProductListComponent },
   { path: '', redirectTo: '/products', pathMatch: 'full' },
   { path: '**', redirectTo: '/products', pathMatch: 'full' },
-
-  // {
-  //   path: 'members',
-  //   component: MembersPageComponent,
-  //   canActivate: [OktaAuthGuard],
-  // },
-
-  // {
-  //   path: 'order-history',
-  //   component: OrderHistoryComponent,
-  //   canActivate: [OktaAuthGuard],
-  // },
-
-  // { path: 'login/callback', component: OktaCallbackComponent },
-  // { path: 'login', component: LoginComponent },
-
-  // { path: 'checkout', component: CheckoutComponent },
-  // { path: 'cart-details', component: CartDetailsComponent },
-  // { path: 'products/:id', component: ProductDetailsComponent },
-  // { path: 'search/:keyword', component: ProductListComponent },
-  // { path: 'category/:id', component: ProductListComponent },
-  // { path: 'category', component: ProductListComponent },
-  // { path: 'products', component: ProductListComponent },
-  // { path: '', redirectTo: '/products', pathMatch: 'full' },
-  // { path: '**', redirectTo: '/products', pathMatch: 'full' },
 ];
 
 @NgModule({

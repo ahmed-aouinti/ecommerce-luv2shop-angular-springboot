@@ -7,7 +7,6 @@ import appConfig from '../../config/app-config';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit, OnDestroy {
   oktaSignin: any;
