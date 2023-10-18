@@ -31,11 +31,11 @@ public class SpringDataRestConfig implements RepositoryRestConfigurer {
         HttpMethod[] unsupportedActions = {HttpMethod.PUT, HttpMethod.POST, HttpMethod.DELETE, HttpMethod.PATCH};
 
         // disable HTTP methods: PUT, POST, DELETE and PATCH
-        disableHttpMethods(Product.class, config, unsupportedActions);
-        disableHttpMethods(ProductCategory.class, config, unsupportedActions);
+        //disableHttpMethods(Product.class, config, unsupportedActions);
+        //disableHttpMethods(ProductCategory.class, config, unsupportedActions);
         disableHttpMethods(Country.class, config, unsupportedActions);
         disableHttpMethods(State.class, config, unsupportedActions);
-        disableHttpMethods(Order.class, config, unsupportedActions);
+        //disableHttpMethods(Order.class, config, unsupportedActions);
 
         // call an internal helper method
         exposeIds(config);
