@@ -7,6 +7,7 @@
         (click)="setSelectedCategory(tempProductCategory)"
         routerLink="/category/{{ tempProductCategory.id }}"
         routerLinkActive="active-link"
+        class="nav-item"
       >
         <div *ngIf="tempProductCategory.categoryName == 'Books'">
           <svg

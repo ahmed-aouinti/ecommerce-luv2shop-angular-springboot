@@ -773,15 +773,14 @@ a.primary-btn:hover {
 * ----------------------------
 */
 footer ul li a {
-  color: #fff;
+  color: #05143f;
 }
 footer {
-  background: #232324;
+  background: #e5e5e5;
   position: relative;
-  text-align: center;
   height: 32px;
-  width: calc(100% - 20rem) !important;
-  margin-left: 20rem;
+  width: 100%;
+  margin-top: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -834,7 +833,7 @@ footer ul li {
   }
   .main-content {
     padding-top: 16.2rem;
-    padding-left: 6rem;
+    /* padding-left: 6rem; */
   }
   .page-container {
     padding: 0 1.2rem;
@@ -864,17 +863,24 @@ footer ul li {
   .login-status-user-info {
     font-weight: 600 !important;
   }
-  .menu-sidebar {
+  /* .menu-sidebar {
     width: 6rem;
     margin-top: 8rem;
     z-index: 999;
-  }
-  .navbar-sidebar .navbar-list li a {
+  } */
+  /* .navbar-sidebar .navbar-list li a {
     color: transparent;
-  }
-  .navbar-list li div {
+  } */
+  /* .navbar-list li div {
     margin: 1.8rem 0;
+  } */
+  .navbar-sidebar .navbar-list li:hover,
+  .navbar-sidebar .navbar-list li.selected {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
   }
+
   .navbar-list li.selected::after,
   .navbar-list li:hover::after,
   .navbar-list li.selected::before,
@@ -885,13 +891,51 @@ footer ul li {
     width: 12rem;
     max-width: none;
   }
-  footer {
-    width: calc(100% - 6rem) !important;
-    margin-left: 6rem;
-  }
+
   .detail-section {
     margin-top: 13rem;
     padding-left: 9.2rem;
+  }
+  /**/
+  .menu-sidebar-content {
+    height: 100%;
+    width: 100%;
+  }
+  .navbar-sidebar {
+    padding: 0;
+  }
+  .mobile-nav {
+    height: 8rem;
+    width: 100vw;
+    z-index: 999;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(5, 20, 63, 0.8);
+    transition: transform 0.5s ease;
+    transform: translateY(0);
+  }
+  .mobile-nav.hidden {
+    transform: translateY(100%);
+  }
+  .navbar-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.8rem;
+  }
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar-sidebar .navbar-list li {
+    margin-bottom: 0;
+    padding: 1.2rem 0;
+  }
+  .navbar-sidebar .navbar-list li a {
+    font-weight: 400;
   }
 }
 /* BELOW 576px  */

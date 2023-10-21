@@ -1,6 +1,6 @@
 <div class="page-wrapper">
   <!-- MENU SIDEBAR-->
-  <aside class="menu-sidebar d-block">
+  <aside class="menu-sidebar d-none d-md-block">
     <div class="logo d-none d-md-block">
       <a routerLink="/products" style="cursor: pointer">
         <img
@@ -14,7 +14,14 @@
     <app-product-category-menu></app-product-category-menu>
   </aside>
   <!-- END MENU SIDEBAR-->
-
+  <!-- START MOBILE NAV-->
+  <nav
+    class="mobile-nav d-block d-md-none"
+    [ngClass]="{ hidden: isScrolledDown }"
+  >
+    <app-product-category-menu></app-product-category-menu>
+  </nav>
+  <!-- END MOBILE NAV-->
   <!-- PAGE CONTAINER-->
   <div class="page-container">
     <!-- HEADER DESKTOP-->

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import OktaSignIn from '@okta/okta-signin-widget';
 import { OktaAuthService } from '@okta/okta-angular';
 
@@ -8,7 +8,7 @@ import appConfig from '../../config/app-config';
   selector: 'app-login',
   templateUrl: './login.component.html',
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnInit {
   oktaSignin: any;
 
   constructor(private oktaAuthService: OktaAuthService) {
@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     );
   }
 
-  ngOnDestroy(): void {
-    this.oktaSignin.remove();
-  }
+  // ngOnDestroy(): void {
+  //   this.oktaSignin.remove();
+  // }
 }
