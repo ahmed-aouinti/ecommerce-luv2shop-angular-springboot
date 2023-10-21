@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CartItem } from 'src/app/common/cart-item';
 import { Product } from 'src/app/common/product';
 import { CartService } from 'src/app/services/cart.service';
@@ -15,7 +15,8 @@ export class ProductDetailsComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute,
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -28,9 +29,14 @@ export class ProductDetailsComponent implements OnInit {
     // get the "id" param string. convert it to a number using the "+" symbol
     const productId: number = +this.route.snapshot.paramMap.get('id')!;
 
-    this.productService.getProduct(productId).subscribe((data) => {
-      this.product = data;
-    });
+    this.productService.getProduct(productId).subscribe(
+      (data) => {
+        this.product = data;
+      },
+      (error) => {
+        this.router.navigateByUrl('/products');
+      }
+    );
   }
 
   addToCart() {
