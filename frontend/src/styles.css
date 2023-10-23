@@ -124,7 +124,6 @@ a:hover {
 }
 .icon-container:hover {
   color: #0da8e4;
-  margin-top: 8px;
 }
 .icon-container:hover .total {
   background-color: #0da8e4;
@@ -880,7 +879,6 @@ footer ul li {
     padding: 0;
     border-radius: 0;
   }
-
   .navbar-list li.selected::after,
   .navbar-list li:hover::after,
   .navbar-list li.selected::before,
@@ -949,5 +947,14 @@ footer ul li {
   }
   .login-status-user-info {
     font-weight: 500 !important;
+  }
+}
+/* BELOW 440px */
+@media (max-width: 27.5rem) {
+  .login-status-header {
+    width: auto !important;
+  }
+  .login-status-user-info {
+    display: none;
   }
 }
