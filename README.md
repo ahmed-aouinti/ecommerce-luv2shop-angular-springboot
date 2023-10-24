@@ -1,6 +1,12 @@
 # Full Stack E-Commerce Website with Angular and Spring Boot
 
-![Project Image](./capture.png)
+### Desktop view
+
+![Desktop Screenshot](./desktop_screenshot.png)
+
+### Mobile view
+
+![Mobile Screenshot](./mobile_screenshot.png)
 
 This repository contains the code for the Full Stack E-Commerce Website developed as part of the Udemy course ["Full Stack: Angular and Java Spring Boot E-Commerce Website"](https://www.udemy.com/course/full-stack-angular-spring-boot-tutorial/) by [Chad Darby](https://github.com/darbyluv2code). The project leverages various technologies, including Java 11, Apache Maven, Hibernate, Spring Core, Spring Data, Spring REST, Spring Boot, Spring Security, TypeScript, Angular, Okta, Stripe, and Swagger API.
 
@@ -111,7 +117,7 @@ You can preview Luv2Shop live demo at [luv2shop-ecommerce](https://luv2shop-ecom
 
 ## Video Demonstration
 
-Watch a video demonstration of the Luv2Shop project [here](./demo.mp4).
+Watch a video demonstration of the Luv2Shop project [here](https://www.youtube.com/watch?v=jLlTbAgyTbQ).
 
 ## Contact Information
 
