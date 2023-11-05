@@ -30,7 +30,9 @@ This E-Commerce website, known as "Luv2Shop," is a full-stack application built 
 
 - **Frontend Hosting**: The frontend is hosted on Netlify for easy access.
 
-- **Backend and Database Hosting**: The backend and database are hosted on Railway.
+- **Backend Hosting**: The backend is hosted on Render.
+
+- **Database Hosting**: The database is hosted on Railway.
 
 ## Technologies Used
 
@@ -52,7 +54,7 @@ This E-Commerce website, known as "Luv2Shop," is a full-stack application built 
 
 ### Added Swagger API Documentation
 
-I contributed by implementing Swagger API documentation to provide detailed information on the project's API endpoints. This documentation can be accessed at [Swagger API Documentation](https://luv2shop-backend.up.railway.app/swagger-ui/index.html).
+I contributed by implementing Swagger API documentation to provide detailed information on the project's API endpoints. This documentation can be accessed at [Swagger API Documentation](https://luv2shop-backend.onrender.com/swagger-ui/index.html).
 
 ### Refine Styling and Responsive Design
 
@@ -62,9 +64,13 @@ I worked on enhancing the overall user interface by refining the styling and ens
 
 The frontend of the project is hosted on Netlify for easy access.
 
-### Backend and MySQL Database Hosting on Railway
+### Backend Hosting on Render
 
-The backend of the project, along with the MySQL database, is hosted on Railway.
+The backend of the project is hosted on Render.
+
+### MySQL Database Hosting on Railway
+
+The MySQL database is hosted on Railway.
 
 ## Usage
 
