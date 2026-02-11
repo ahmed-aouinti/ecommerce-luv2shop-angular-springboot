@@ -1,0 +1,52 @@
+pipeline {
+agent any
+
+tools {
+    nodejs 'Node18'
+}
+
+environment {
+    FRONTEND_DIR = 'frontend'
+}
+
+stages {
+
+    stage('Checkout') {
+        steps {
+            checkout scm
+        }
+    }
+
+    stage('Install Dependencies') {
+        steps {
+            dir("${FRONTEND_DIR}") {
+                sh 'npm install'
+            }
+        }
+    }
+
+    stage('Run Tests') {
+        steps {
+            dir("${FRONTEND_DIR}") {
+                sh 'npm run test -- --watch=false --browsers=ChromeHeadless'
+            }
+        }
+    }
+
+    stage('Build Angular App') {
+        steps {
+            dir("${FRONTEND_DIR}") {
+                sh 'npm run build --prod'
+            }
+        }
+    }
+}
+
+post {
+    success {
+        echo 'Frontend Build Successful!'
+    }
+    failure {
+        echo 'Frontend Build Failed!'
+    }
+}
