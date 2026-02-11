@@ -1,0 +1,48 @@
+pipline{
+  agent any
+  tools {
+    maven 'Maven'
+    jdk 'JDK17'
+  }
+  environment {
+  BACKEND_DIR='backend'
+  }
+  stages {
+    stage ('CHECHOUT'){
+    steps {
+      checkout scm
+    }
+}
+  stage ('Build Backend'){
+  steps {
+    dir("${BACHEND_DIR}"){
+    sh 'mvn clean compile'
+    }
+  }
+  }
+  stage ('Run Tests'){
+  steps {
+  dir("${BACKEND_DIR}"){
+    sh 'mvn test'
+  }
+  }
+  }
+  stage('Package') {
+        steps {
+            dir("${BACKEND_DIR}") {
+                sh 'mvn package -DskipTests'
+            }
+        }
+    }
+}
+
+post {
+    success {
+        echo 'Backend Build Successful!'
+    }
+    failure {
+        echo 'Backend Build Failed!'
+    }
+}
+
+}
